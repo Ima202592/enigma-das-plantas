@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Enigma das Plantas — plantas, vasos e acessórios para trazer a natureza para casa.">
+<title>Enigma das Plantas | A natureza em tua casa</title>
+<style>
+:root{--forest:#294b3b;--leaf:#789477;--sage:#dce7d8;--cream:#f7f5ed;--sand:#e9e2d3;--ink:#26352c;--muted:#68756b;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1160px,92%);margin:auto}
+header{background:rgba(247,245,237,.96);position:sticky;top:0;z-index:10;border-bottom:1px solid #e5e4da}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:Georgia,serif;font-size:24px;color:var(--forest);font-weight:bold}.brand small{display:block;font:10px Arial;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+nav{display:flex;gap:25px;font-size:14px;color:var(--forest)}nav a:hover{color:var(--leaf)}
+.cart-btn,.primary{background:var(--forest);color:white;border:0;border-radius:30px;padding:12px 19px}
+.hero{padding:66px 0 72px;background:linear-gradient(105deg,#e4ebdf 0%,#e4ebdf 54%,#d4dfd0 54%,#d4dfd0 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:36px}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--leaf);font-weight:bold}
+h1,h2,h3{font-family:Georgia,serif;font-weight:normal}h1{font-size:clamp(42px,6vw,68px);line-height:1.04;color:var(--forest);margin:16px 0}
+.hero p{font-size:17px;line-height:1.7;color:#536457;max-width:480px}.hero-art{min-height:350px;border-radius:48% 48% 8px 8px;background:radial-gradient(ellipse at 50% 78%,#8ba17d 0 13%,transparent 14%),radial-gradient(ellipse at 38% 45%,#557b59 0 18%,transparent 19%),radial-gradient(ellipse at 66% 34%,#6e916c 0 20%,transparent 21%),linear-gradient(145deg,#c8d7c2,#edf0e7);display:grid;place-items:center;color:#fff;font:italic 23px Georgia;text-shadow:0 2px 8px #38513b;padding:25px;text-align:center}
+section{padding:70px 0}.section-head{text-align:center;margin-bottom:34px}.section-head h2{font-size:38px;color:var(--forest);margin:8px 0}.section-head p{color:var(--muted);line-height:1.6}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.category{padding:26px;border-radius:14px;background:#e8eee4;text-align:center}.category .symbol{font-size:35px}.category h3{font-size:23px;color:var(--forest);margin:12px 0 5px}.category p{color:var(--muted);font-size:14px;margin:0}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:white;border-radius:14px;overflow:hidden;box-shadow:0 7px 25px #26352c0b}.product-art{height:210px;display:grid;place-items:center;font-size:75px;background:linear-gradient(140deg,#e6eddf,#cbd9c6)}.product:nth-child(2) .product-art{background:linear-gradient(140deg,#eee9dc,#d9cfb8)}.product:nth-child(3) .product-art{background:linear-gradient(140deg,#e4eadf,#c5d3c1)}.product:nth-child(4) .product-art{background:linear-gradient(140deg,#efe9df,#d8c9b5)}.product:nth-child(5) .product-art{background:linear-gradient(140deg,#e3ebdf,#b9cbb7)}.product:nth-child(6) .product-art{background:linear-gradient(140deg,#eee9df,#d8ddc9)}
+.product-info{padding:18px}.product-info h3{font-size:22px;color:var(--forest);margin:0 0 7px}.product-info p{font-size:13px;color:var(--muted);line-height:1.5;min-height:39px}.price-row{display:flex;align-items:center;justify-content:space-between;margin-top:16px}.price{font-weight:bold;color:var(--forest)}.add{border:1px solid var(--leaf);background:white;color:var(--forest);border-radius:25px;padding:9px 13px}.add:hover{background:var(--sage)}
+.about{background:#e9eee5}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about h2{font-size:38px;color:var(--forest);margin:10px 0}.about p{line-height:1.8;color:#5c6b5f}.about-visual{min-height:270px;border-radius:16px;background:linear-gradient(135deg,#c9d7c3,#edf0e8);display:grid;place-items:center;font-size:95px}
+.contact{text-align:center}.contact h2{font-size:38px;color:var(--forest)}.contact p{color:var(--muted);line-height:1.7}
+footer{background:var(--forest);color:#e9eee5;padding:28px 0;text-align:center;font-size:13px}
+.cart-panel{position:fixed;right:18px;bottom:18px;width:min(360px,calc(100% - 36px));background:white;border-radius:16px;box-shadow:0 12px 45px #0002;padding:20px;z-index:20;display:none}.cart-panel.open{display:block}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-head h3{margin:0;color:var(--forest);font-size:23px}.close{border:0;background:none;font-size:24px}.cart-items{font-size:14px;line-height:1.7;max-height:180px;overflow:auto;margin:15px 0}.cart-total{font-weight:bold;border-top:1px solid #eee;padding-top:12px;display:flex;justify-content:space-between}.whatsapp{display:block;text-align:center;background:#287c4b;color:white;padding:13px;border-radius:30px;margin-top:15px}.hint{font-size:11px;color:#8a6d42;margin-top:10px}
+@media(max-width:760px){.nav{height:auto;padding:15px 0;flex-wrap:wrap}.brand{font-size:21px}nav{order:3;width:100%;justify-content:space-between;gap:10px;font-size:13px}.hero{padding:45px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-art{min-height:230px}.categories{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr);gap:12px}.product-art{height:150px;font-size:58px}.product-info{padding:13px}.product-info h3{font-size:18px}.product-info p{font-size:12px}.add{font-size:12px;padding:8px 10px}section{padding:52px 0}}
+@media(max-width:420px){.products{grid-template-columns:1fr 1fr}.price-row{align-items:flex-start;gap:8px;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#">Enigma das Plantas<small>natureza que inspira</small></a>
+  <nav><a href="#inicio">Início</a><a href="#categorias">Categorias</a><a href="#loja">Loja</a><a href="#sobre">Sobre nós</a><a href="#contactos">Contactos</a></nav>
+  <button class="cart-btn" onclick="toggleCart()">Carrinho (<span id="cart-count">0</span>)</button>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-grid">
+  <div><div class="eyebrow">Um pouco de natureza, todos os dias</div><h1>Descobre o encanto do verde.</h1><p>Plantas, vasos e pequenos detalhes para transformar a tua casa num espaço mais natural, acolhedor e cheio de vida.</p><a class="primary" href="#loja">Explorar a loja</a></div>
+  <div class="hero-art" role="img" aria-label="Ilustração botânica">Cultiva a tua ligação<br>com a natureza</div>
+</div></section>
+<section id="categorias"><div class="wrap"><div class="section-head"><div class="eyebrow">Explora</div><h2>Encontra o teu verde</h2><p>Pequenos detalhes que fazem a diferença.</p></div>
+<div class="categories">
+  <div class="category"><div class="symbol">🪴</div><h3>Plantas</h3><p>Para dar vida a qualquer divisão.</p></div>
+  <div class="category"><div class="symbol">🏺</div><h3>Vasos</h3><p>O complemento perfeito para as tuas plantas.</p></div>
+  <div class="category"><div class="symbol">🌿</div><h3>Acessórios</h3><p>Tudo para cuidar do teu pequeno jardim.</p></div>
+</div></div></section>
+<section id="loja"><div class="wrap"><div class="section-head"><div class="eyebrow">A nossa seleção</div><h2>Favoritos da natureza</h2><p>Estes são produtos de exemplo. Depois vamos substituir pelos teus produtos e preços reais.</p></div>
+<div class="products" id="products">
+  <article class="product"><div class="product-art">🪴</div><div class="product-info"><h3>Monstera deliciosa</h3><p>Uma planta tropical de folhas marcantes para interiores luminosos.</p><div class="price-row"><span class="price">12,50 €</span><button class="add" onclick="addToCart('Monstera deliciosa',12.5)">Adicionar +</button></div></div></article>
+  <article class="product"><div class="product-art">🌵</div><div class="product-info"><h3>Pequena suculenta</h3><p>Compacta e fácil de cuidar, ideal para secretárias e prateleiras.</p><div class="price-row"><span class="price">4,50 €</span><button class="add" onclick="addToCart('Pequena suculenta',4.5)">Adicionar +</button></div></div></article>
+  <article class="product"><div class="product-art">🌿</div><div class="product-info"><h3>Jiboia</h3><p>Uma trepadeira versátil que acrescenta um toque natural.</p><div class="price-row"><span class="price">8,90 €</span><button class="add" onclick="addToCart('Jiboia',8.9)">Adicionar +</button></div></div></article>
+  <article class="product"><div class="product-art">🏺</div><div class="product-info"><h3>Vaso de cerâmica</h3><p>Design simples e intemporal para valorizar as tuas plantas.</p><div class="price-row"><span class="price">9,90 €</span><button class="add" onclick="addToCart('Vaso de cerâmica',9.9)">Adicionar +</button></div></div></article>
+  <article class="product"><div class="product-art">🪴</div><div class="product-info"><h3>Vaso natural</h3><p>Um apontamento discreto para ambientes acolhedores.</p><div class="price-row"><span class="price">7,50 €</span><button class="add" onclick="addToCart('Vaso natural',7.5)">Adicionar +</button></div></div></article>
+  <article class="product"><div class="product-art">💧</div><div class="product-info"><h3>Regador minimalista</h3><p>Um acessório prático para a rotina de cuidados.</p><div class="price-row"><span class="price">11,00 €</span><button class="add" onclick="addToCart('Regador minimalista',11)">Adicionar +</button></div></div></article>
+</div></div></section>
+<section class="about" id="sobre"><div class="wrap about-grid"><div><div class="eyebrow">A nossa essência</div><h2>Mais verde. Mais vida. Mais casa.</h2><p>Na Enigma das Plantas acreditamos que a natureza tem o poder de tornar os nossos espaços mais especiais. Queremos ajudar-te a encontrar as plantas e os acessórios certos para criares o teu próprio refúgio verde.</p></div><div class="about-visual">🌱</div></div></section>
+<section class="contact" id="contactos"><div class="wrap"><div class="eyebrow">Estamos aqui para ajudar</div><h2>Vamos falar sobre plantas?</h2><p>Queres saber mais sobre um produto ou fazer uma encomenda?<br>Entra em contacto connosco pelo WhatsApp.</p><a class="primary" href="#loja" onclick="toggleCart()">Ver carrinho e encomendar</a></div></section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Enigma das Plantas · Feito com carinho e natureza.</div></footer>
+<aside class="cart-panel" id="cart-panel"><div class="cart-head"><h3>O teu carrinho</h3><button class="close" onclick="toggleCart()" aria-label="Fechar">×</button></div><div class="cart-items" id="cart-items">Ainda não adicionaste produtos.</div><div class="cart-total"><span>Total</span><span id="cart-total">0,00 €</span></div><a class="whatsapp" id="whatsapp-link" href="#" target="_blank" rel="noopener">Encomendar pelo WhatsApp</a><div class="hint">Antes de publicar, vamos configurar o número de WhatsApp da loja.</div></aside>
+<script>
+const WHATSAPP_NUMBER = "351912598280"; // Número da loja com indicativo de Portugal
+const cart=[];
+const euro=n=>n.toLocaleString('pt-PT',{style:'currency',currency:'EUR'});
+function addToCart(name,price){cart.push({name,price});renderCart();document.getElementById('cart-panel').classList.add('open')}
+function renderCart(){
+ document.getElementById('cart-count').textContent=cart.length;
+ const items=document.getElementById('cart-items');
+ items.innerHTML=cart.length?cart.map((p,i)=>`${i+1}. ${p.name} — ${euro(p.price)}`).join('<br>'):'Ainda não adicionaste produtos.';
+ const total=cart.reduce((s,p)=>s+p.price,0);document.getElementById('cart-total').textContent=euro(total);
+ const message='Olá! Gostaria de fazer esta encomenda na Enigma das Plantas:\n'+cart.map(p=>'- '+p.name+' — '+euro(p.price)).join('\n')+'\nTotal: '+euro(total);
+ const link=document.getElementById('whatsapp-link');
+ if(WHATSAPP_NUMBER){link.href='https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(message);link.style.opacity='1';link.onclick=null}
+ else{link.href='#';link.style.opacity='.55';link.onclick=(e)=>{e.preventDefault();alert('Vamos configurar o número de WhatsApp da loja no próximo passo.')}}
+}
+function toggleCart(){document.getElementById('cart-panel').classList.toggle('open')}
+document.getElementById('year').textContent=new Date().getFullYear();renderCart();
+</script>
+</body>
+</html>
